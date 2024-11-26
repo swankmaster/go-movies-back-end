@@ -257,7 +257,7 @@ func (m *PostgresDBRepo) AllGenres() ([]*models.Genre, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), dbTimeout)
 	defer cancel()
 
-	query := `select id, genre, created_at, updated_at, from genres order by genre`
+	query := `select id, genre, created_at, updated_at from genres order by genre`
 
 	rows, err := m.DB.QueryContext(ctx, query)
 
