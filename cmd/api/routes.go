@@ -28,8 +28,8 @@ func (app *application) routes() http.Handler {
 	mux.Route("/admin", func(mux chi.Router) {
 		mux.Use(app.authRequired)
 
-		mux.Get("/movies", app.MovieCatalog)
-		mux.Get("/movies/{id}", app.MovieForEdit)
+		mux.Get("/movie", app.MovieCatalog)
+		mux.Get("/movie/{id}", app.MovieForEdit)
 	})
 
 	return mux
